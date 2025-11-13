@@ -4,6 +4,8 @@ Este projeto é uma **Progressive Web App (PWA)** que usa a API **Astronomy Pict
 
 Ele exibe diariamente uma foto astronômica, com título traduzido para português, descrição original (com opção de tradução via Google Translate), data e créditos da imagem.
 
+A descrição das imagens está em ingles porque a API que eu usei para traduzir não aceitava tantos caracteres.
+
 Eu hospedei o site aqui >>>>> https://apod-pwa.onrender.com/ <<<<< caso não queira instalar nada.
 
 ---

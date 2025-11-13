@@ -1,7 +1,10 @@
 # APOD API
 
 Este projeto é uma **Progressive Web App (PWA)** que usa a API **Astronomy Picture of the Day (APOD)** da NASA.  
+
 Ele exibe diariamente uma foto astronômica, com título traduzido para português, descrição original (com opção de tradução via Google Translate), data e créditos da imagem.
+
+Eu hospedei o site aqui >>>>> https://apod-pwa.onrender.com/ <<<<< caso não queira instalar nada.
 
 ---
 

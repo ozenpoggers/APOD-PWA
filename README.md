@@ -52,18 +52,14 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
    http://localhost:8080
 ---
 ## Rodando localmente sem Docker
-   1. Instale dependências (se houver package.json):
-
+1. Instale dependências (se houver package.json):
    ```bash
    npm install
    ```
-   2. Sirva os arquivos com um servidor simples:
-
+2. Sirva os arquivos com um servidor simples:
    ```bash
    npx serve
    ```
-   
-   3. Acesse no navegador:
-   
+3. Acesse no navegador:
    ```bash
    http://localhost:3000

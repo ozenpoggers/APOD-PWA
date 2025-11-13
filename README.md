@@ -11,6 +11,7 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
 - [Docker](https://docs.docker.com/get-docker/) instalado  
 - (Opcional) [Node.js](https://nodejs.org/) caso queira rodar testes localmente  
 - Uma chave da API da NASA (gratuita em: [https://api.nasa.gov](https://api.nasa.gov))
+- Git para clonar o repositório
 
 ---
 ##  Funcionalidades
@@ -38,28 +39,18 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
    ```bash
    git clone https://github.com/seu-usuario/nasa-apod-pwa.git
    cd nasa-apod-pwa
+2. Configurar a chave da NASA:
+     ```bash
+   1. Crie um arquivo .env na raiz do projeto.
+     
+   2. Copie o conteúdo do .env.example e substitua pela sua chave real: NASA_API_KEY=sua_chave_real_aqui
 
-2. Construa a imagem Docker:
+4. Construa a imagem Docker:
     ```bash
-   docker build -t nasa-apod-pwa .
+   docker-compose up --build
 
-4. Rode o container:
+5. Acesse no navegador:
     ```bash
-   docker run -d -p 8080:80 nasa-apod-pwa
+   http://localhost:81
+    
 
-6. Acesse no navegador:
-    ```bash
-   http://localhost:8080
----
-## Rodando localmente sem Docker
-1. Instale dependências (se houver package.json):
-   ```bash
-   npm install
-   ```
-2. Sirva os arquivos com um servidor simples:
-   ```bash
-   npx serve
-   ```
-3. Acesse no navegador:
-   ```bash
-   http://localhost:3000

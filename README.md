@@ -49,8 +49,14 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
     ```bash
    docker-compose up --build
 
-5. Acesse no navegador:
+5. Acesse a aplicação no navegador:
     ```bash
    http://localhost:81
-    
+    ```
+6.(Opcional) Testes:
+   ```bash
+      npm ci
+      npx playwright install --with-deps
+      npx playwright test
+
 

@@ -32,11 +32,14 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
    cd nasa-apod-pwa
 
 2. Construa a imagem Docker:
+    ```bash
    docker build -t nasa-apod-pwa .
 
-3. Rode o container: 
+4. Rode o container:
+    ```bash
    docker run -d -p 8080:80 nasa-apod-pwa
 
-4. Acesse no navegador:
+6. Acesse no navegador:
+    ```bash
    http://localhost:8080
    

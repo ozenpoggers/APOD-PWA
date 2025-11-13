@@ -1,16 +1,19 @@
 {
   "name": "apod-api",
   "version": "1.0.0",
-  "description": "Este projeto é uma **Progressive Web App (PWA)** que consome a API **Astronomy Picture of the Day (APOD)** da NASA.  \r Ele exibe diariamente uma foto astronômica, com título traduzido para português, descrição original (com opção de tradução via Google Translate), data e créditos da imagem.",
-  "main": "app.js",
-  "directories": {
-    "test": "tests"
+  "description": "PWA que consome a API Astronomy Picture of the Day (APOD) da NASA.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
   },
-  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0"
+  },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.1"

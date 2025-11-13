@@ -1,20 +1,9 @@
-// Função de tradução usando MyMemory (para o título)
-async function traduzir(texto) {
-  const res = await fetch(
-    "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(texto) + "&langpair=en|pt"
-  );
-  const data = await res.json();
-  return data.responseData.translatedText;
-}
-
 document.getElementById('mostrarFoto').addEventListener('click', async () => {
   try {
     const dataEscolhida = document.getElementById('dataFoto').value;
 
-    // Monta a URL da API com ou sem data
-    const url = dataEscolhida
-      ? `https://api.nasa.gov/planetary/apod?api_key=uivj3yvcO6nxuFfSfNdhCMOm0wZziP6clg00DJXD&date=${dataEscolhida}`
-      : `https://api.nasa.gov/planetary/apod?api_key=uivj3yvcO6nxuFfSfNdhCMOm0wZziP6clg00DJXD`;
+    // Chama o backend, que injeta a chave
+    const url = dataEscolhida ? `/apod?date=${dataEscolhida}` : `/apod`;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -24,14 +13,10 @@ document.getElementById('mostrarFoto').addEventListener('click', async () => {
       return;
     }
 
-    // traduzir título
-    const tituloTraduzido = await traduzir(data.title);
-
-    // formata a data
     const dataFormatada = new Date(data.date).toLocaleDateString('pt-BR');
 
     let conteudo = `
-      <h2>${tituloTraduzido}</h2>
+      <h2>${data.title}</h2>
       <h3>${dataFormatada}</h3>
     `;
 
@@ -41,7 +26,6 @@ document.getElementById('mostrarFoto').addEventListener('click', async () => {
       conteudo += `<iframe src="${data.url}" width="560" height="315" frameborder="0" allowfullscreen></iframe>`;
     }
 
-    // descrição + link para traduzir
     conteudo += `
       <p><strong>Explicação:</strong> ${data.explanation}</p>
       <a href="https://translate.google.com/?sl=en&tl=pt&text=${encodeURIComponent(data.explanation)}" target="_blank">
@@ -49,11 +33,8 @@ document.getElementById('mostrarFoto').addEventListener('click', async () => {
       </a>
     `;
 
-    // créditos da foto (se existirem)
     if (data.copyright) {
-      conteudo += `
-        <p><strong>Créditos da imagem:</strong> ${data.copyright}</p>
-      `;
+      conteudo += `<p><strong>Créditos da imagem:</strong> ${data.copyright}</p>`;
     }
 
     document.getElementById('fotoDia').innerHTML = conteudo;

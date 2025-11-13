@@ -1,8 +1,20 @@
+# Ignorar arquivos de ambiente
+.env
 
-# Playwright
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+
+# Build 
+dist/
+build/
+.cache/
+
+# Docker
+*.pid
+*.seed
+*.log

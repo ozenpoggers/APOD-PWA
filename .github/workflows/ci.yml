@@ -17,6 +17,9 @@ jobs:
       - name: Build Docker image
         run: docker build -t apod-pwa .
 
+      - name: Remove old container if exists
+        run: docker rm -f nasa-pwa || true
+
       - name: Run container
         run: docker run -d -p 81:80 --name nasa-pwa -e NASA_API_KEY=$NASA_API_KEY apod-pwa
 

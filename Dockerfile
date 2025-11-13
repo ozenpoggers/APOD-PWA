@@ -1,11 +1,12 @@
-FROM nginx:alpine
+FROM node:18-alpine
 
-RUN rm /etc/nginx/conf.d/default.conf
+WORKDIR /app
 
-COPY nginx.conf /etc/nginx/conf.d
+COPY . .
 
-COPY . /usr/share/nginx/html
+# Servir os arquivos estáticos com um servidor simples
+RUN npm install -g serve
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["serve", "-s", ".", "-l", "80"]

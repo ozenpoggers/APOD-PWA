@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  apod:
+    build: .
+    ports:
+      - "81:80"
+    environment:
+      - NASA_API_KEY=${NASA_API_KEY}

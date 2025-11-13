@@ -1,11 +1,19 @@
-# 🚀 NASA APOD PWA
+#  APOD API
 
-Este projeto é uma **Progressive Web App (PWA)** que consome a API **Astronomy Picture of the Day (APOD)** da NASA.  
+Este projeto é uma **Progressive Web App (PWA)** que usa a API **Astronomy Picture of the Day (APOD)** da NASA.  
 Ele exibe diariamente uma foto astronômica, com título traduzido para português, descrição original (com opção de tradução via Google Translate), data e créditos da imagem.
 
 ---
 
-## ✨ Funcionalidades
+
+##  Pré-requisitos
+
+- [Docker](https://docs.docker.com/get-docker/) instalado  
+- (Opcional) [Node.js](https://nodejs.org/) caso queira rodar testes localmente  
+- Uma chave da API da NASA (gratuita em: [https://api.nasa.gov](https://api.nasa.gov))
+
+---
+##  Funcionalidades
 - Exibe a **foto ou vídeo astronômico do dia** diretamente da API da NASA.
 - Mostra o **título traduzido para português** usando a API gratuita MyMemory.
 - Inclui a **descrição original em inglês** com link para tradução no Google Translate.
@@ -15,7 +23,7 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+##  Tecnologias utilizadas
 - **HTML5 / CSS3 / JavaScript**
 - **NASA APOD API**
 - **MyMemory Translation API**
@@ -24,7 +32,7 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
 
 ---
 
-## 📦 Como rodar localmente
+##  Como rodar localmente
 
 1. Clone este repositório:
    ```bash
@@ -32,11 +40,26 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
    cd nasa-apod-pwa
 
 2. Construa a imagem Docker:
+    ```bash
    docker build -t nasa-apod-pwa .
 
-3. Rode o container: 
+4. Rode o container:
+    ```bash
    docker run -d -p 8080:80 nasa-apod-pwa
 
-4. Acesse no navegador:
+6. Acesse no navegador:
+    ```bash
    http://localhost:8080
-   
+---
+## Rodando localmente sem Docker
+1. Instale dependências (se houver package.json):
+   ```bash
+   npm install
+   ```
+2. Sirva os arquivos com um servidor simples:
+   ```bash
+   npx serve
+   ```
+3. Acesse no navegador:
+   ```bash
+   http://localhost:3000

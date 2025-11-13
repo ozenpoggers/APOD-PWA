@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t apod-pwa .
+
+      - name: Run container
+        run: docker run -d -p 81:80 --name nasa-pwa -e NASA_API_KEY=$NASA_API_KEY apod-pwa
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Playwright tests
+        run: |
+          npx playwright install --with-deps
+          npx playwright test

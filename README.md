@@ -1,11 +1,11 @@
-# 🚀 NASA APOD PWA
+#  APOD API
 
-Este projeto é uma **Progressive Web App (PWA)** que consome a API **Astronomy Picture of the Day (APOD)** da NASA.  
+Este projeto é uma **Progressive Web App (PWA)** que usa a API **Astronomy Picture of the Day (APOD)** da NASA.  
 Ele exibe diariamente uma foto astronômica, com título traduzido para português, descrição original (com opção de tradução via Google Translate), data e créditos da imagem.
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 - Exibe a **foto ou vídeo astronômico do dia** diretamente da API da NASA.
 - Mostra o **título traduzido para português** usando a API gratuita MyMemory.
 - Inclui a **descrição original em inglês** com link para tradução no Google Translate.
@@ -15,7 +15,7 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+##  Tecnologias utilizadas
 - **HTML5 / CSS3 / JavaScript**
 - **NASA APOD API**
 - **MyMemory Translation API**
@@ -24,7 +24,7 @@ Ele exibe diariamente uma foto astronômica, com título traduzido para portugu�
 
 ---
 
-## 📦 Como rodar localmente
+##  Como rodar localmente
 
 1. Clone este repositório:
    ```bash

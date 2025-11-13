@@ -22,3 +22,5 @@ app.get("/apod", async (req, res) => {
 });
 
 app.listen(80, () => console.log("Servidor rodando na porta 80"));
+
+

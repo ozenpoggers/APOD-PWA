@@ -3,7 +3,8 @@ document.getElementById('mostrarFoto').addEventListener('click', async () => {
     const dataEscolhida = document.getElementById('dataFoto').value;
 
     // Chama o backend, que injeta a chave
-    const url = dataEscolhida ? `/apod?date=${dataEscolhida}` : `/apod`;
+    const API_URL = "https://apod-pwa.onrender.com/apod";
+    const url = dataEscolhida ? `${API_URL}?date=${dataEscolhida}` : API_URL;
 
     const res = await fetch(url);
     const data = await res.json();
